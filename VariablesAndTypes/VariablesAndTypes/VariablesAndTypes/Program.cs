@@ -70,3 +70,5 @@ Console.WriteLine("Entre com o comprimento do terreno em metros: ");
 double comprimento = double.Parse(Console.ReadLine()!, CultureInfo.InvariantCulture);
 double area = largura * comprimento;
 Console.WriteLine($"A area do terreno que tem {largura} m de largura e {comprimento} m de comprimento é de {area} m²");
+
+
