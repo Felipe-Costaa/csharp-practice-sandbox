@@ -1,10 +1,12 @@
 ﻿int opcaoMenu = 0;
 do
 {
-    Console.WriteLine("Bem vindo aao menu de opções de exercicios!");
+    Console.Clear();
+    Console.WriteLine("Bem vindo ao menu de opções de exercicios!");
     Console.WriteLine("Entre com a opção do exercicio que você quer executar");
     Console.WriteLine("Exercicio 1: Soma das vendas");
     Console.WriteLine("Exercicio 2: Controle de estoque");
+    Console.WriteLine("Exercicio 3: Numero secreto");
     Console.WriteLine("Sair: -1");
     opcaoMenu = int.Parse(Console.ReadLine()!);
     switch (opcaoMenu)
@@ -14,6 +16,9 @@ do
             break;
         case 2:
             ControleDeEstoque();
+            break;
+        case 3:
+            NumeroSecreto();
             break;
     }
 
@@ -64,4 +69,26 @@ void ControleDeEstoque()
         }
     } while (controleLoop != 2);
     
+}
+void NumeroSecreto()
+{
+    int numeroSorteado = Random.Shared.Next(0,11);
+    int palpite;
+    Console.Clear();
+    do
+    {
+        Console.WriteLine("Entre com um palpite para o numero sorteado:");
+        palpite = int.Parse(Console.ReadLine()!);
+        if (palpite == numeroSorteado)
+        {
+            Console.WriteLine($"Parabéns! Você acertou! O numero sorteado foi {numeroSorteado}");
+            Thread.Sleep(2000);
+            Console.Clear();
+        }
+        else
+        {
+            Console.WriteLine("Tente outra vez!");
+        }
+
+    }while (palpite != numeroSorteado);
 }
